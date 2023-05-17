@@ -48,9 +48,24 @@ module.exports = {
           800: '#027435',
           900: '#025929',
         },
+        blue:{
+          50: '#e6f7ff',
+          100: '#b3e6ff',
+          200: '#80d4ff',
+          300: '#4dc2ff',
+          400: '#26b2ff',
+          500: '#009dff',
+          600: '#008ae6',
+          700: '#0077cc',
+          800: '#0063b3',
+          900: '#005099',
+        },
       },
       backgroundImage:{
        stripes: 'linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 12.5%, transparent 12.5%, transparent)'
+      },
+      fontSize:{
+        '5xl': '2.5rem',
       },
 
       backgroundSize: {
