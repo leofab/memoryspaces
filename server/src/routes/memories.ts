@@ -54,8 +54,15 @@ export async function memoriesRoutes(app: FastifyInstance) {
     const users = await prisma.user.findMany();
     return users;
   });
-  app.delete('/memories/:id', async () => {
-    const users = await prisma.user.findMany();
-    return users;
+  app.delete('/memories/:id', async (request) => {
+    const paramSchema = z.object({
+      id: z.string().uuid(),
+    });
+    const {id} = paramSchema.parse(request.params);
+
+    const memory = await prisma.memory.delete({
+      where: {
+        id,
+      },
   });
 }
