@@ -1,11 +1,11 @@
 import fastify from 'fastify';
 import { PrismaClient } from '@prisma/client';
-import {getUsers} from "./routes/memories";
+import {memoriesRoutes} from "./routes/memories";
 
 const app = fastify();
 const prisma = new PrismaClient();
 
-app.register(getUsers, {prefix: '/users'});
+app.register(memoriesRoutes);
 
 app.listen({
   port: 3333,
