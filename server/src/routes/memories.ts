@@ -29,10 +29,27 @@ export async function memoriesRoutes(app: FastifyInstance) {
         id,
       },
   });
-  app.post('/memories', async () => {
-    const users = await prisma.user.findMany();
-    return users;
+  app.post('/memories', async (request) => {
+    const bodySchema = z.object({
+    content: z.string(),
+    coverUrl: z.string(),
+    isPublic: z.coerce.boolean().default(false),
+  })
+
+    const { content, coverUrl, isPublic } = bodySchema.parse(request.body);
+
+    const memory = await prisma.memory.create({
+      data: {
+        content,
+        coverUrl,
+        isPublic,
+        userId: '1',
+      },
+
+  })
+    return memory;
   });
+
   app.put('/memories/:id', async () => {
     const users = await prisma.user.findMany();
     return users;
