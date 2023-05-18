@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, ImageBackground } from 'react-native';
+import { ImageBackground } from 'react-native';
 import blurBg from './src/assets/bg-blur.png'
+import Stripes from './src/assets/stripes.svg'
 
 import {
   useFonts,
@@ -28,6 +29,7 @@ export default function App() {
       className="relative bg-zinc-800 flex-1 items-center"
       imageStyle={{ position: 'absolute', left: '-100%' }}
     >
+      <Stripes/>
       <StatusBar style="inverted" />
     </ImageBackground>
   );
