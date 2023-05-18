@@ -29,7 +29,7 @@ export default function App() {
   return (
     <ImageBackground
       source={blurBg}
-      className="relative bg-zinc-800 flex-1 items-center px-8"
+      className="relative bg-zinc-800 flex-1 items-center px-8 py-10"
       imageStyle={{ position: 'absolute', left: '-100%' }}
     >
       <StyledStripes className="absolute left-2"/>
@@ -43,12 +43,13 @@ export default function App() {
             Colecione momentos, fotos, vídeos e muito mais.
           </Text>
         </View>
-        <TouchableOpacity className="rounded-full bg-blue-400 px-5 py-3">
+        <TouchableOpacity activeOpacity={0.5} className="rounded-full bg-blue-400 px-5 py-3">
           <Text className="font-alt text-sm uppercase text-black">
             Cadastrar Lembrança
           </Text>
         </TouchableOpacity>
       </View>
+        <Text className="text-center font-body text-sm leading-relaxed text-gray-200">Feito com ♥ com a RocketSeat</Text>
       <StatusBar style="inverted" />
     </ImageBackground>
   );
