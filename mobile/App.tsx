@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground } from 'react-native';
+import {Image, ImageBackground, View} from 'react-native';
 import blurBg from './src/assets/bg-blur.png'
 import Stripes from './src/assets/stripes.svg'
+import memorySpaces from './src/assets/memoryspaces.png';
 
 import {
   useFonts,
@@ -11,8 +12,10 @@ import {
 import {
   BaiJamjuree_700Bold,
 } from '@expo-google-fonts/bai-jamjuree'
+import {styled} from "nativewind";
+import React from "react";
 
-
+const StyledStripes = styled(Stripes)
 
 export default function App() {
 
@@ -29,7 +32,10 @@ export default function App() {
       className="relative bg-zinc-800 flex-1 items-center"
       imageStyle={{ position: 'absolute', left: '-100%' }}
     >
-      <Stripes/>
+      <StyledStripes className="absolute left-2"/>
+      <View className="flex-1 items-center justify-center gap-6">
+      <Image source={memorySpaces}/>
+      </View>
       <StatusBar style="inverted" />
     </ImageBackground>
   );
