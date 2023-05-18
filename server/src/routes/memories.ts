@@ -88,4 +88,5 @@ export async function memoriesRoutes(app: FastifyInstance) {
         id,
       },
   });
+});
 }
