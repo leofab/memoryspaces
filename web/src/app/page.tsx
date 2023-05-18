@@ -1,6 +1,7 @@
 import { User } from 'lucide-react';
 import Image from 'next/image';
 import memoryspaces from '../assets/memoryspaces.png';
+import {Copyright} from "@/components/Copyright";
 export default function Home() {
   return <main className="grid grid-cols-2 min-h-screen">
     {/* Esquerda */}
@@ -11,7 +12,7 @@ export default function Home() {
       <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes"/>
 
       { /* Login */ }
-      <a href="" className="flex items-center gap-3 text-left hover:text-gray-50 transition-all">
+      <a target="_blank" href={`https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`} className="flex items-center gap-3 text-left hover:text-gray-50 transition-all">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
           <User className="h-5 w-5 text-gray-500" />
         </div>
@@ -29,23 +30,7 @@ export default function Home() {
         <a className="inline-block rounded-full bg-gray-200 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-blue-600 transition-all" href="">GUARDAR LEMBRANÇA</a>
       </div>
       {/* CopyRight */}
-      <div className="text-sm leading-relaxed text-gray-200">
-        Feito com <span className="text-red-500">♥</span> na {' '}
-        <a
-          className="underline hover:text-gray-100"
-          href="https://www.rocketseat.com.br/nlw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >NlwSpaceTime
-        </a>
-        {' '}com a {' '}
-        <a
-          href="https://rocketseat.com.br"
-          className="underline hover:text-gray-100"
-          target="_blank"
-          rel="noopener noreferrer"
-        >RocketSeat</a>
-      </div>
+      <Copyright />
     </div>
 
 
