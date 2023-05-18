@@ -26,7 +26,7 @@ export default function Home() {
             Colecione momentos, fotos, vídeos e muito mais.
           </p>
         </div>
-        <a className="inline-block rounded-full bg-gray-200 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-purple-400 transition-all" href="">CADASTRAR LEMBRANÇA</a>
+        <a className="inline-block rounded-full bg-gray-200 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-blue-600 transition-all" href="">GUARDAR LEMBRANÇA</a>
       </div>
       {/* CopyRight */}
       <div className="text-sm leading-relaxed text-gray-200">
