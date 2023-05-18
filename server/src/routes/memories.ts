@@ -1,6 +1,6 @@
 import {prisma} from "../lib/prisma";
 import {FastifyInstance} from "fastify";
-export async function getMemories(app: FastifyInstance) {
+export async function getUsers(app: FastifyInstance) {
 
   app.get('/', async () => {
     const users = await prisma.user.findMany();
