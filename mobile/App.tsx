@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { Text, ImageBackground } from 'react-native';
+import blurBg from './src/assets/bg-blur.png'
 
 import {
   useFonts,
@@ -22,9 +23,12 @@ export default function App() {
 
   if(!fontsLoaded) return null;
   return (
-    <View className="bg-zinc-800 flex-1 items-center justify-center">
-      <Text className="text-zinc-50 font-bold text-5xl">My First ReactNative App</Text>
+    <ImageBackground
+      source={blurBg}
+      className="relative bg-zinc-800 flex-1 items-center"
+      imageStyle={{ position: 'absolute', left: '-100%' }}
+    >
       <StatusBar style="inverted" />
-    </View>
+    </ImageBackground>
   );
 }
