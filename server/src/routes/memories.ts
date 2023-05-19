@@ -90,15 +90,15 @@ export async function memoriesRoutes(app: FastifyInstance) {
       return reply.status(401).send();
     }
 
-    // const memory = await prisma.memory.update({
-    //   where: {
-    //     id,},
-    //   data: {
-    //     content,
-    //     coverUrl,
-    //     isPublic,
-    //   }
-    // })
+    memory = await prisma.memory.update({
+      where: {
+        id,},
+      data: {
+        content,
+        coverUrl,
+        isPublic,
+      }
+    })
     return memory;
   });
 
@@ -107,7 +107,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
       id: z.string().uuid(),
     });
     const {id} = paramSchema.parse(request.params);
-    let memory = await prisma.memory.findUniqueOrThrow({
+    const memory = await prisma.memory.findUniqueOrThrow({
       where: {
         id,
       }
@@ -116,11 +116,11 @@ export async function memoriesRoutes(app: FastifyInstance) {
     if(memory.userId !== request.user.sub) {
       return reply.status(401).send();
     }
-  //   const memory = await prisma.memory.delete({
-  //
-  //     where: {
-  //       id,
-  //     },
-  // });
+    await prisma.memory.delete({
+
+      where: {
+        id,
+      },
+  });
 });
 }
