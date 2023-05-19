@@ -8,7 +8,7 @@ export async function GET(request: NextRequest){
   const registerResponse = await api.post('/register', {
     code,
   })
-  const {token} = registerResponse.data;
+  const token = registerResponse.data;
   console.log(token);
 
   const redirectURL = new URL ('/', request.url)
